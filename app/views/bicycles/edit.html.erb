@@ -1,0 +1,31 @@
+<h1>Edit Bicycle</h1>
+<%= form_for @bicycle do |f| %>
+<% if @bicycle.errors.any? %>
+  <div class="error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+      <% for message in @bicycle.errors.full_messages %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="field">
+  <%= f.label :Brand %>
+  <%= f.text_field :brand %>
+</div><br>
+<div class="field">
+  <%= f.label :Color %>
+  <%= f.select :color, [['Red','red'],['Blue','blue'],['Green','green'],['Orange','orange'],['Pink','pink'],['Purple','purple'],['Black','black'],['White','white'],['Carbon','carbon'],['Yellow','yellow'],['Grey','grey'],['Pink Girly Bike by JayT','pink girly bike by jayt']] %>
+</div><br>
+<div class="field">
+  <%= f.label :Condition %>
+  <%= f.select :condition, [['Excellent','excellent'],['Good','good'],['Fair','fair'],['Poor','poor']] %>
+</div><br>
+<div class="field">
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+</div><br>
+<div class="actions"><%= f.submit %></div>
+<% end %>
+<%= link_to 'Back', bicycle_path %>

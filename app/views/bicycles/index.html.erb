@@ -1,0 +1,18 @@
+<h1>Bikes for Sale</h1>
+<%= link_to 'Post Bike', new_bicycle_path %>
+
+<% @bicycles.each do |bicycle| %>
+ <p>
+   <%= bicycle.brand %>
+   <%= bicycle.color %>
+   <%= bicycle.condition %> -->
+   <img src=" <%= bicycle.image %> "><br>
+   <a href="/bicycles/<%= bicycle.id %>/edit">
+     Edit
+   </a>
+   <%= link_to 'Destroy',  bicycle,  method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+
+
+ </p>
+<% end %>

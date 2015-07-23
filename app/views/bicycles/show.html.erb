@@ -1,0 +1,13 @@
+
+<h1>Bike Posted!</h1>
+  <p>
+    <%= @bicycle.id %>
+    <%= @bicycle.brand %>
+    <%= @bicycle.color %>
+    <%= @bicycle.condition %>
+    <img src=" <%= @bicycle.image %> ">
+  </p>
+  <%= link_to 'Post another Bike', new_bicycle_path %><br>
+<%= link_to 'Edit this Bike', edit_bicycle_path %><br>
+<%= link_to 'Bikes for Sale', bicycles_path %>
+
